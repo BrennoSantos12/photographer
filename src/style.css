@@ -1,14 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap');
 
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@theme {
-    --font-gravitas: 'Gravitas One', 'regular';
-}
-
 
 
 
@@ -16,4 +12,8 @@
 body {
     margin: 0;
     padding: 0;
+    background-image: url('../assets/img/caudas.png');
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
 }

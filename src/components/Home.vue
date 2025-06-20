@@ -18,40 +18,35 @@ onMounted(async () => {
     showLetters.value[i] = true
     await new Promise(r => setTimeout(r, 50))
   }
-  await new Promise(r => setTimeout(r, 800))
+  await new Promise(r => setTimeout(r, 200))
   underlineState.value = 'shrink'
 })
 </script>
 
 <template>
-  <main>
-    <div v-if="showBackground" class="background">
+  <main class="background">
       <div v-if="showContent" class="content">
         <h1 class="font-gravitas text-[100px] text-[#d8d8d8] h1-animated">
           <span v-for="(l, i) in letters" :key="i" class="letter" :class="{ visible: showLetters[i] }">{{ l }}</span>
         </h1>
         <div class="underline" :class="underlineState"></div>
       </div>
-    </div>
       <div>
-        
       </div>
   </main>
+  
 </template>
 
 <style scoped>
-.white-screen.hide {
-  opacity: 0;
-  pointer-events: none;
-}
 .background {
   background-image: url('../assets/img/caudas.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center 20%;
-  min-height: 100vh;
+  background-position: center 40%;
+  background-attachment: fixed;
+  height: 100vh;
   min-width: 100vw;
-  position: relative;
+  position: flex;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,19 +57,18 @@ onMounted(async () => {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
+  z-index: 100;
 }
 .content {
   position: relative;
   z-index: 2;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 .h1-animated {
   display: flex;
-  gap: 0.1em;
   justify-content: center;
 }
 .letter {
@@ -90,7 +84,7 @@ onMounted(async () => {
   height: 4px;
   background: #d8d8d8;
   border-radius: 2px;
-  margin-top: -80px;
+  margin-top: -30px;
   margin-bottom: 16px;
   width: 0;
   opacity: 0;
@@ -111,6 +105,6 @@ onMounted(async () => {
   opacity: 0;
   transition:
     width .5s,
-    opacity 0.5s 0.8s;
+    opacity 0.5s 0.1s;
 }
 </style>
