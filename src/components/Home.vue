@@ -26,7 +26,7 @@ onMounted(async () => {
 <template>
   <main class="background">
       <div v-if="showContent" class="content">
-        <h1 class="font-gravitas text-[100px] text-[#d8d8d8] h1-animated">
+        <h1 class="font-gravitas text-[80px] text-[#d8d8d8] h1-animated">
           <span v-for="(l, i) in letters" :key="i" class="letter" :class="{ visible: showLetters[i] }">{{ l }}</span>
         </h1>
         <div class="underline" :class="underlineState"></div>

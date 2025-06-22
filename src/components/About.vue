@@ -2,15 +2,18 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const width = ref(60)
-const height = ref(5)
-const showCaudas = ref(false)
+const height = ref(100)
+const scale = ref(1.1) 
+const translateY = ref(60)
 
 function handleScroll() {
   const maxScroll = 400
   const scrolled = Math.min(window.scrollY, maxScroll)
   width.value = 60 + ((scrolled / maxScroll) * 40)
-  height.value = 5 + (scrolled / maxScroll) * 100    
-  showCaudas.value = scrolled >= maxScroll
+  height.value = 100 + (scrolled / maxScroll) * 100    
+
+  scale.value = 1 - (scrolled / maxScroll)
+  translateY.value = 60 - (scrolled / maxScroll) * 200
 }
 
 onMounted(() => {
@@ -23,29 +26,34 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <main 
-    class="background h-screen w-screen flex items-center justify-center"
-  >
+  <main class="background relative">
     <div
-      class="fixed bg-white flex items-center justify-center "
+      class="absolute bg-[#4D4D4D] left-1/2 "
       :style="{
-        left: '50%',
-        bottom: '0%',
-        transform: 'translate(-50%)',
+        top: 0,
+        transform: 'translateX(-50%) translateY(-10%)',
         width: width + '%',
         height: height + 'vh',
-        zIndex: 20
+        zIndex: 20,
       }"
     >
-      <h1 v-if="height > 10" class="text-4xl">OLA MUNDO</h1>
+      <div
+        class="p-20 animation-img grid grid-cols-4 gap-10"
+        :style="{ 
+          transform: `scale(${scale}) translateY(-${translateY}px)`, 
+        }"
+      >
+        <img src="../assets/img/image01.png" alt="" class="flex img" />
+        <img src="../assets/img/image01.png" alt="" class="flex img" />
+        <img src="../assets/img/image01.png" alt="" class="flex img" />
+        <img src="../assets/img/image01.png" alt="" class="flex img" />
+      </div>
+      <section class="mt-10 p-10 z-110">
+        <h2 class="text-2xl font-bold text-white">Mais conteúdo aqui</h2>
+        <p class="text-white">Adicione seus textos, imagens e outros elementos normalmente.</p>
+      </section>
     </div>
-    <div
-      v-if="showCaudas"
-      class="fixed top-4 left-4 text-3xl text-black font-bold text-white z-30 "
-      
-    >
-      Caudas
-    </div>
+   
   </main>
 </template>
 
@@ -56,13 +64,8 @@ onUnmounted(() => {
   background-repeat: no-repeat;
   background-position: center 40%;
   background-attachment: fixed;
-  height: 100vh;
+  min-height: 100vh;
   min-width: 100vw;
-  position: flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  transition: opacity 0.5s;
+  display: block;
 }
 </style>
