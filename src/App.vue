@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import Home from './components/Home.vue'
 import About from './components/About.vue';
-
+import Service from './components/Service.vue';
 </script>
 
 <template>
 <Home />
 <About />
+<Service />
 </template>
 
 <style scoped>

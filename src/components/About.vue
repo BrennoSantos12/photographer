@@ -5,6 +5,8 @@ const width = ref(60)
 const height = ref(100)
 const scale = ref(1.1) 
 const translateY = ref(60)
+const lastSection = ref<HTMLElement | null>(null)
+
 
 function handleScroll() {
   const maxScroll = 400
@@ -14,6 +16,9 @@ function handleScroll() {
 
   scale.value = 1 - (scrolled / maxScroll)
   translateY.value = 60 - (scrolled / maxScroll) * 200
+  if (lastSection.value) {
+    lastSection.value.style.transform = `width(${scrolled / 2}px)`
+  }
 }
 
 onMounted(() => {
@@ -49,9 +54,31 @@ onUnmounted(() => {
         <img src="../assets/img/image01.png" alt="" class="flex img" />
       </div>
       <section class="mt-10 p-10 z-110">
-        <h2 class="text-2xl font-bold text-white">Mais conteúdo aqui</h2>
-        <p class="text-white">Adicione seus textos, imagens e outros elementos normalmente.</p>
+        <h1 class="text-4xl font-bold text-white">Mais conteúdo aqui</h1>
+        <h1 class="text-white text-2xl w-[50%]">Lorem ipsum dolor sit amet consectetur, 
+          adipisicing elit. Minus ex atque quisquam praesentium dignissimos perferendis
+           eveniet, officia necessitatibus officiis vero dolor mollitia soluta temporibus 
+           provident, minima, laborum laboriosam animi tempore?</h1>
       </section>
+      <section class="flex justify-end p-10">
+          <h1 class="text-4xl font-bold text-white">MAIS CONTEUDO AQUI</h1>
+       </section>
+       <section class="flex justify-end p-10 translate-y-[-5rem] text-right">
+        <h1 class="text-white text-2xl w-[50%]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae ut omnis veritatis beatae officiis voluptate suscipit voluptatem tenetur illo! Nihil quae saepe quam similique iure odit unde alias adipisci. Culpa?</h1>
+       </section>
+       <section class="mt-10 p-10 z-110">
+        <h1 class="text-4xl font-bold text-white">Mais conteúdo aqui</h1>
+        <h1 class="text-white text-2xl w-[50%]">Lorem ipsum dolor sit amet consectetur, 
+          adipisicing elit. Minus ex atque quisquam praesentium dignissimos perferendis
+           eveniet, officia necessitatibus officiis vero dolor mollitia soluta temporibus 
+           provident, minima, laborum laboriosam animi tempore?</h1>
+      </section>
+      <section class="flex justify-end p-10">
+        <h1 class="text-4xl font-bold text-white">MAIS CONTEUDO AQUI</h1>
+     </section>
+     <section ref="lastSection" class="flex justify-end p-10 translate-y-[-5rem] text-right">
+      <h1 class="text-white text-2xl w-[50%]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae ut omnis veritatis beatae officiis voluptate suscipit voluptatem tenetur illo! Nihil quae saepe quam similique iure odit unde alias adipisci. Culpa?</h1>
+     </section>
     </div>
    
   </main>
