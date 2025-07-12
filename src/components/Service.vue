@@ -3,10 +3,27 @@
 </script>
 
 <template>
-    <div class="h-[200vh]">
-<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda illo nemo voluptas, fuga rem aperiam natus fugit, aut aspernatur quaerat explicabo blanditiis temporibus cupiditate vel, quam modi tempora deserunt. Distinctio.
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ab eius eaque inventore repellendus, excepturi tempore laudantium reiciendis sequi voluptatibus ut consequatur, numquam ex quisquam doloribus eum deserunt, laborum qui.
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptas consectetur optio in commodi nisi totam, assumenda voluptates maiores rerum cum tenetur similique harum. Facere commodi quibusdam ratione soluta quia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum quisquam autem numquam eligendi minima ipsam officia nesciunt voluptatibus ea quae! Veritatis illo libero tenetur. Labore, omnis alias. Dolorum, laboriosam corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi dolores tempora temporibus voluptate reiciendis quibusdam adipisci libero repellat perferendis, doloremque eaque modi magnam sunt consequatur, voluptatum dolorum ducimus quam deleniti.
-</h1>
+<div class="h-[100vh] z-120 bg-black">
 </div>
+<div class="h-[100vh] flex justify-center items-center flex-col bg-black">
+    <div class="flex">
+    <h1 class="text-6xl font-gravitas mb-4 text-white">Serviços:</h1>
+</div>
+<div class="flex justify-center gap-10 mt-10 text-white">
+    <div class="bg-gray-500 h-[120%] w-[25%] rounded-xl hover:scale-[1.1] transition-all">
+        <h1 class="p-5 text-xl">Corporate events</h1>
+        <h2 class="p-5">Professional coverage for corporate gatherings, capturing key moments and attendees.</h2>
+    </div>
+    <div class="bg-gray-500 h-[120%] w-[25%] rounded-xl hover:scale-[1.1] transition-all">
+        <h1 class="p-5 text-xl">Private Parties</h1>
+        <h2 class="p-5">
+            Candid and posed shots to commemorate your special celebrations with friends and family.</h2>
+    </div>
+    <div class="bg-gray-500 h-[120%] w-[25%] rounded-xl hover:scale-[1.1] transition-all">
+        <h1 class="p-5 text-xl">Conferences</h1>
+        <h2 class="p-5">Comprehensive photography services for conferences, including speakers, sessions, and networking events.</h2>
+    </div>
+</div>
+</div>
+
 </template>

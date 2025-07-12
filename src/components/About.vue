@@ -12,7 +12,7 @@ function handleScroll() {
   const maxScroll = 400
   const scrolled = Math.min(window.scrollY, maxScroll)
   width.value = 60 + ((scrolled / maxScroll) * 40)
-  height.value = 100 + (scrolled / maxScroll) * 100    
+  height.value = 120 + (scrolled / maxScroll) * 100    
 
   scale.value = 1 - (scrolled / maxScroll)
   translateY.value = 60 - (scrolled / maxScroll) * 200
@@ -43,15 +43,20 @@ onUnmounted(() => {
       }"
     >
       <div
-        class="p-20 animation-img grid grid-cols-4 gap-10"
+        class="p-20  grid grid-cols-4 gap-10 "
         :style="{ 
           transform: `scale(${scale}) translateY(-${translateY}px)`, 
         }"
       >
-        <img src="../assets/img/image01.png" alt="" class="flex img" />
-        <img src="../assets/img/image01.png" alt="" class="flex img" />
-        <img src="../assets/img/image01.png" alt="" class="flex img" />
-        <img src="../assets/img/image01.png" alt="" class="flex img" />
+        <img src="../assets/img/01 desenho.jpg" alt="" class="h-[200px] rounded-xl" />
+        <img src="../assets/img/20250322_213951.jpg" alt="" class="w-[500px] h-[300px] rounded-xl" />
+        <img src="../assets/img/IMG_2047.jpg" alt="" class="w-[800px] h-[200px] rounded-xl" />
+        <img src="../assets/img/image01.png" alt="" class="w-[600px] h-[300px] rounded-xl" />
+        <img src="../assets/img/IMG_2047.jpg" alt="" class="translate-y-[-100px] w-[800px] h-[300px] rounded-xl" />
+        <img src="../assets/img/01 desenho.jpg" alt="" class="h-[200px] rounded-xl" />
+        <img src="../assets/img/image01.png" alt="" class="translate-y-[-100px] w-[600px] h-[300px] rounded-xl" />
+        <img src="../assets/img/20250322_213951.jpg" alt="" class="w-[500px] h-[300px] rounded-xl" />
+
       </div>
       <section class="mt-10 p-10 z-110">
         <h1 class="text-4xl font-bold text-white">Mais conteúdo aqui</h1>
@@ -66,19 +71,6 @@ onUnmounted(() => {
        <section class="flex justify-end p-10 translate-y-[-5rem] text-right">
         <h1 class="text-white text-2xl w-[50%]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae ut omnis veritatis beatae officiis voluptate suscipit voluptatem tenetur illo! Nihil quae saepe quam similique iure odit unde alias adipisci. Culpa?</h1>
        </section>
-       <section class="mt-10 p-10 z-110">
-        <h1 class="text-4xl font-bold text-white">Mais conteúdo aqui</h1>
-        <h1 class="text-white text-2xl w-[50%]">Lorem ipsum dolor sit amet consectetur, 
-          adipisicing elit. Minus ex atque quisquam praesentium dignissimos perferendis
-           eveniet, officia necessitatibus officiis vero dolor mollitia soluta temporibus 
-           provident, minima, laborum laboriosam animi tempore?</h1>
-      </section>
-      <section class="flex justify-end p-10">
-        <h1 class="text-4xl font-bold text-white">MAIS CONTEUDO AQUI</h1>
-     </section>
-     <section ref="lastSection" class="flex justify-end p-10 translate-y-[-5rem] text-right">
-      <h1 class="text-white text-2xl w-[50%]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae ut omnis veritatis beatae officiis voluptate suscipit voluptatem tenetur illo! Nihil quae saepe quam similique iure odit unde alias adipisci. Culpa?</h1>
-     </section>
     </div>
    
   </main>
