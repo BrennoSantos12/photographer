@@ -43,7 +43,7 @@ onUnmounted(() => {
       }"
     >
       <div
-        class="p-20  grid grid-cols-4 gap-10 "
+        class="p-20  grid grid-cols-4 gap-10 mt-10"
         :style="{ 
           transform: `scale(${scale}) translateY(-${translateY}px)`, 
         }"
