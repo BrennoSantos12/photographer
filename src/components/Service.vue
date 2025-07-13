@@ -3,8 +3,6 @@
 </script>
 
 <template>
-<div class="h-[100vh] z-120 bg-black">
-</div>
 <div class="h-[100vh] flex justify-center items-center flex-col bg-black">
     <div class="flex">
     <h1 class="text-6xl font-gravitas mb-4 text-white">Serviços:</h1>
@@ -27,3 +25,4 @@
 </div>
 
 </template>
+

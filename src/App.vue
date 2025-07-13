@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import Menu from './components/Menu.vue';
 import Home from './components/Home.vue'
 import About from './components/About.vue';
 import Service from './components/Service.vue';
 </script>
 
 <template>
+<Menu/>
 <Home />
 <About />
 <Service />
