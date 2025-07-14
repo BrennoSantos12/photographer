@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, watch, nextTick } from 'vue'
+import instagramSrc from '/src/assets/img/instagram.jpg'
+import twitterSrc from '/src/assets/img/x.webp'
 
 const isOpen = ref(false)
 const swingImg = ref<HTMLElement | null>(null)
@@ -23,10 +25,10 @@ type Block = {
 }
 
 const instagramImg = new Image()
-instagramImg.src = '/src/assets/img/instagram.jpg'
+instagramImg.src = instagramSrc
 
 const twitterImg = new Image()
-twitterImg.src = '/src/assets/img/x.webp'
+twitterImg.src = twitterSrc
 
 function startSwing() {
   const el = swingImg.value
@@ -43,7 +45,7 @@ function addBlock() {
   const canvas = canvasRef.value
   if (!canvas) return
 
-  const cores = ['#8e44ad', '#3498db', '#e67e22', '#2ecc71']
+  const cores = ['#00000']
   const color = cores[Math.floor(Math.random() * cores.length)]
 
   const x = canvas.width - blockSize - 10
