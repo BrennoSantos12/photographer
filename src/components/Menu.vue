@@ -257,10 +257,9 @@ onMounted(() => {
       </div>
 
       <ul class="text-6xl space-y-6 font-gravitas text-center z-10">
-        <li><a href="#" @click="isOpen = false">Início</a></li>
+        <li><a href="#" @click="isOpen = false">Home</a></li>
         <li><a href="#" @click="isOpen = false">Sobre mim</a></li>
         <li><a href="#" @click="isOpen = false">Galeria</a></li>
-        <li><a href="#" @click="isOpen = false">Sair</a></li>
       </ul>
     </div>
   </transition>

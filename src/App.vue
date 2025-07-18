@@ -1,15 +1,18 @@
 <script setup lang="ts">
 import Menu from './components/Menu.vue';
-import Home from './components/Home.vue'
-import About from './components/About.vue';
-import Service from './components/Service.vue';
+import Home from './views/Home.vue'
+import About from './views/About.vue';
+import Show from './views/Show.vue';
+import Service from './views/Service.vue';
 </script>
 
 <template>
 <Menu/>
 <Home />
 <About />
+<Show />
 <Service />
+
 </template>
 
 <style scoped>
