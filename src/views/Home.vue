@@ -116,9 +116,11 @@ onMounted(async () => {
     font-size: 14vw;
   }
   .underline.grow {
-    transform: translateY(-10px);
     width: 80vw;
     max-width: 90vw;
+  }
+  .underline {
+    margin-top: -10px;
   }
   .content {
     padding: 0 4vw;
