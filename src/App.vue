@@ -13,7 +13,10 @@ import Service from './components/Service.vue';
 </template>
 
 <style scoped>
-
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
     margin: 0;
     padding: 0;

@@ -53,7 +53,6 @@ function addBlock() {
   const vx = -Math.random() * 2
   const vy = 0
 
-  // Decide aleatoriamente qual bloco criar: Instagram ou Twitter
   const isInstagram = Math.random() < 0.5
 
   let img: HTMLImageElement | null = null

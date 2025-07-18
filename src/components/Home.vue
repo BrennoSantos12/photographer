@@ -26,7 +26,7 @@ onMounted(async () => {
 <template>
   <main class="background">
       <div v-if="showContent" class="content">
-        <h1 class="font-gravitas text-[80px] text-[#d8d8d8] h1-animated">
+        <h1 class="font-gravitas text-[10vw] sm:text-[80px] text-[#d8d8d8] h1-animated">
           <span v-for="(l, i) in letters" :key="i" class="letter" :class="{ visible: showLetters[i] }">{{ l }}</span>
         </h1>
         <div class="underline" :class="underlineState"></div>
@@ -88,16 +88,17 @@ onMounted(async () => {
   margin-bottom: 16px;
   width: 0;
   opacity: 0;
+  
   transition:
     width 0.8s cubic-bezier(.77,0,.18,1),
     opacity 0.8s cubic-bezier(.77,0,.18,1);
 }
 .underline.start {
-  width: 60px;
+  width: 30px;
   opacity: 0;
 }
 .underline.grow {
-  width: 40rem;
+  width: 30rem;
   opacity: 1;
 }
 .underline.shrink {
@@ -106,5 +107,21 @@ onMounted(async () => {
   transition:
     width .5s,
     opacity 0.5s 0.1s;
+}
+@media (max-width: 600px) {
+  .h1-animated {
+    font-size: 12vw;
+  }
+  .letter {
+    font-size: 14vw;
+  }
+  .underline.grow {
+    transform: translateY(-10px);
+    width: 80vw;
+    max-width: 90vw;
+  }
+  .content {
+    padding: 0 4vw;
+  }
 }
 </style>
