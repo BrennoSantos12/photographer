@@ -123,12 +123,13 @@ onBeforeUnmount(() => {
     <main class="background text-white min-h-screen bg-black px-4">
       <div class="flex flex-col">
         <div class="fle itens-center justify-center text-center mb-8">
-          <h1 class="text-6xl font-gravitas">Agende uma conversar!</h1>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-gravitas">Vamos conversar!</h1>
+
         </div>
   
         <div class="flex">
           <div>
-            <div class="flex flex-col w-80 gap-4">
+            <div class="flex flex-col w-80 gap-4 text-center">
   
               <h1 class="text-2xl font-semibold">Entre em contato!</h1>
   
@@ -176,7 +177,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
     </main>
-    <div class="bg-black w-screen h-20 flex justify-center items-center"><h1>desenvolvido por: @techinov</h1></div>
+    <div class="bg-black w-screen h-20 flex justify-center items-center text-gray-500"><h1>desenvolvido por: @techinov</h1></div>
 </template>
   
 <style>
