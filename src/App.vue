@@ -6,7 +6,7 @@ import Menu from './components/Menu.vue';
 <template>
   <Menu />
 
-    <router-view></router-view>
+    <router-view />
   </template>
   
   

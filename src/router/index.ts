@@ -1,11 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Galeria from '../views/Galery.vue'
-import Home from '../views/All.vue'
+import All from '../views/All.vue'
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/galeria', component: Galeria }
-
+  {
+    path: '/',
+    name: 'home',
+    component: All,
+  },
+  {
+    path: '/galeria',
+    name: 'galeria',
+    component: Galeria,
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: { name: 'home' },
+  },
 ]
 
 const router = createRouter({
