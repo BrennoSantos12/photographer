@@ -1,13 +1,22 @@
 <script setup lang="ts">
 import { ref, onMounted, watch, nextTick } from 'vue'
-import instagramSrc from '/src/assets/img/instagram.jpg'
-import twitterSrc from '/src/assets/img/x.webp'
+import instagramSrc from '/src/assets/icones/instagram.jpg'
+import twitterSrc from '/src/assets/icones/x.webp'
+import tiktokSrc from '../assets/icones/tiktok.jpg'
+import pinterestSrc from '../assets/icones/pinterest.jpg'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+watch(
+  () => route.fullPath,
+  () => { isOpen.value = false }
+)
 
 const isOpen = ref(false)
 const swingImg = ref<HTMLElement | null>(null)
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 
-const blocks = ref<Block[]>([])
 const gravity = 0.5
 const friction = 0.98
 const bounce = 0.3
@@ -24,11 +33,26 @@ type Block = {
   link: string
 }
 
+const blocks = ref<Block[]>([])
+
 const instagramImg = new Image()
 instagramImg.src = instagramSrc
 
 const twitterImg = new Image()
 twitterImg.src = twitterSrc
+
+const tiktokImg = new Image()
+tiktokImg.src = tiktokSrc
+
+const pinterestImg = new Image()
+pinterestImg.src = pinterestSrc
+
+const socialLinks = [
+  { img: instagramImg, link: 'https://www.instagram.com/_caudas_/' },
+  { img: twitterImg, link: 'https://x.com/Sr_Caudas' },
+  { img: tiktokImg, link: 'https://www.tiktok.com/@c4udas?is_from_webapp=1&sender_device=pc' },
+  { img: pinterestImg, link: 'https://pin.it/3m3MO4VQe' }
+]
 
 function startSwing() {
   const el = swingImg.value
@@ -45,7 +69,7 @@ function addBlock() {
   const canvas = canvasRef.value
   if (!canvas) return
 
-  const cores = ['#00000']
+  const cores = ['#000000']
   const color = cores[Math.floor(Math.random() * cores.length)]
 
   const x = canvas.width - blockSize - 10
@@ -53,25 +77,28 @@ function addBlock() {
   const vx = -Math.random() * 2
   const vy = 0
 
-  const isInstagram = Math.random() < 0.5
+  // Escolhe aleatoriamente uma rede social
+  const social = socialLinks[Math.floor(Math.random() * socialLinks.length)]
 
-  let img: HTMLImageElement | null = null
-  let link = ''
-
-  if (isInstagram) {
-    img = new Image()
-    img.src = instagramImg.src
-    link = 'https://www.instagram.com/_caudas_/'
-  } else {
-    img = new Image()
-    img.src = twitterImg.src
-    link = 'https://x.com/Sr_Caudas'
-  }
-
-  blocks.value.push({ x, y, vx, vy, color, img, link })
+  blocks.value.push({
+    x,
+    y,
+    vx,
+    vy,
+    color,
+    img: social.img,
+    link: social.link
+  })
 }
 
-function roundRect(ctx: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, radius: number) {
+function roundRect(
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+  radius: number
+) {
   ctx.beginPath()
   ctx.moveTo(x + radius, y)
   ctx.lineTo(x + width - radius, y)
@@ -95,8 +122,8 @@ function resolveCollision(a: Block, b: Block) {
     const overlap = blockSize - distance
     const angle = Math.atan2(dy, dx)
 
-    const moveX = Math.cos(angle) * overlap / 2
-    const moveY = Math.sin(angle) * overlap / 2
+    const moveX = (Math.cos(angle) * overlap) / 2
+    const moveY = (Math.sin(angle) * overlap) / 2
 
     a.x -= moveX
     a.y -= moveY
@@ -109,19 +136,17 @@ function resolveCollision(a: Block, b: Block) {
     const aNormal = a.vx * nx + a.vy * ny
     const bNormal = b.vx * nx + b.vy * ny
 
-    const aTangent = a.vx - aNormal * nx
-    const bTangent = b.vx - bNormal * nx
-
+    const aTangentX = a.vx - aNormal * nx
     const aTangentY = a.vy - aNormal * ny
+    const bTangentX = b.vx - bNormal * nx
     const bTangentY = b.vy - bNormal * ny
 
     const aNormalAfter = bNormal * bounce
     const bNormalAfter = aNormal * bounce
 
-    a.vx = aTangent + aNormalAfter * nx
+    a.vx = aTangentX + aNormalAfter * nx
     a.vy = aTangentY + aNormalAfter * ny
-
-    b.vx = bTangent + bNormalAfter * nx
+    b.vx = bTangentX + bNormalAfter * nx
     b.vy = bTangentY + bNormalAfter * ny
   }
 }
@@ -145,7 +170,6 @@ function animate() {
       block.y = canvas.height - blockSize
       block.vy *= -bounce
     }
-
     if (block.x < 0) {
       block.x = 0
       block.vx *= -bounce
@@ -162,11 +186,24 @@ function animate() {
     block.vx *= friction
     block.vy *= friction
 
+    const drawX = Math.round(block.x)
+    const drawY = Math.round(block.y)
+
     if (block.img && block.img.complete) {
-      ctx.drawImage(block.img, Math.round(block.x), Math.round(block.y), blockSize, blockSize)
+      const centerX = drawX + blockSize / 2
+      const centerY = drawY + blockSize / 2
+      const radius = blockSize / 2
+
+      ctx.save()
+      ctx.beginPath()
+      ctx.arc(centerX, centerY, radius, 0, Math.PI * 2)
+      ctx.closePath()
+      ctx.clip()
+      ctx.drawImage(block.img, drawX, drawY, blockSize, blockSize)
+      ctx.restore()
     } else {
       ctx.fillStyle = block.color
-      roundRect(ctx, Math.round(block.x), Math.round(block.y), blockSize, blockSize, 10)
+      roundRect(ctx, drawX, drawY, blockSize, blockSize, 10)
     }
   }
 
@@ -209,7 +246,6 @@ onMounted(() => {
 </script>
 
 
-
 <template>
   <div class="fixed top-4 right-4 z-[99999]">
     <button
@@ -250,16 +286,16 @@ onMounted(() => {
         @touchstart="startSwing"
       >
         <img
-          src="../assets/img/CaudasIdentidade.png"
+          src="../assets/icones/CaudasIdentidade.png"
           alt=""
           class="h-[300px] swing-anchor"
         />
       </div>
 
       <ul class="text-6xl space-y-6 font-gravitas text-center z-10">
-        <li><a href="#" @click="isOpen = false">Home</a></li>
-        <li><a href="#" @click="isOpen = false">Sobre mim</a></li>
-        <li><a href="#" @click="isOpen = false">Galeria</a></li>
+        <li><router-link to="/">Home</router-link></li>
+        <!-- <li><a href="#" @click="isOpen = false">Sobre mim</a></li> -->
+        <li><router-link to="/galeria">Galeria</router-link></li>
       </ul>
     </div>
   </transition>
