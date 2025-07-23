@@ -128,7 +128,10 @@ onBeforeUnmount(() => {
 
       <div class="flex ">
         <div class="flex justify-between w-full">
-          <div class="flex flex-col w-80 gap-4 text-center">
+          <form  
+              action="https://formspree.io/f/xqalpwgo"
+            method="POST"
+          class="flex flex-col w-80 gap-4 text-center">
             <h1 class="text-2xl font-semibold">Entre em contato!</h1>
 
             <div
@@ -138,8 +141,8 @@ onBeforeUnmount(() => {
               @mouseleave="() => handleMouseLeave(1)"
             >
               <input
-                type="text"
-                placeholder="Seu nome"
+                type="email"
+                placeholder="Seu email"
                 class="tilt-elem bg-gray-200 text-black hover:text-white hover:bg-gray-900 p-2 rounded w-full max-w-md focus:outline-none"
               />
             </div>
@@ -153,6 +156,7 @@ onBeforeUnmount(() => {
               <textarea
                 placeholder="Sua mensagem"
                 rows="5"
+                name="message"
                 class="tilt-elem bg-gray-200 text-black hover:text-white hover:bg-gray-900 p-2 rounded w-full max-w-md resize-none focus:outline-none"
               ></textarea>
             </div>
@@ -164,37 +168,44 @@ onBeforeUnmount(() => {
               class="tilt-wrapper inline-block"
             >
               <button
+              type="submit"
                 class="tilt-elem bg-red-600 text-white p-2 font-medium hover:bg-gray-900 hover:text-red-600 active:scale-[0.98] transition-colors duration-150"
               >
                 Enviar
               </button>
             </div>
-          </div>
+          </form>
         
         </div>
       
       </div>
-      <div class="flex gap-4 justify-center md:justify-end mt-4">
+      <div class="flex gap-4 justify-center md:justify-end mt-[10rem] md:mt-4">
+
         <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
-        <a href="https://www.tiktok.com/@c4udas?is_from_webapp=1&sender_device=pc">  <img src="../assets/icones/tiktok.jpg" alt="" class="w-full h-full object-cover rounded-full" /></a>
-        </div>
+          <a 
+          href="https://wa.me/5565999668973" >  <img src="../assets/icones/whatsapp.jpg" alt="" class="w-full h-full object-cover rounded-full" /></a>
+          </div>
+          <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
+            <a href="https://x.com/Sr_Caudas">  <img src="../assets/icones/x.webp" alt="" class="w-full h-full object-cover rounded-full" /></a>
+            </div>
         <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
        <a href="https://www.instagram.com/_caudas_/">  <img src="../assets/icones/instagram.jpg" alt="" class="w-full h-full object-cover rounded-full" /> </a> 
         </div>
         <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
       <a href="https://pin.it/3m3MO4VQe">   <img src="../assets/icones/pinterest.jpg" alt="" class="w-full h-full object-cover rounded-full" /></a> 
-        </div>
+        </div>   
         <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
-        <a href="https://x.com/Sr_Caudas">  <img src="../assets/icones/x.webp" alt="" class="w-full h-full object-cover rounded-full" /></a>
-        </div>
+          <a href="https://www.tiktok.com/@c4udas?is_from_webapp=1&sender_device=pc">  <img src="../assets/icones/tiktok.jpg" alt="" class="w-full h-full object-cover rounded-full" /></a>
+          </div>
       </div>
     </div>
   </main>
-
-  <div class="bg-black w-screen h-20 flex flex-col justify-center items-center text-gray-500">
-    <p>&copy; {{ new Date().getFullYear() }} Caudas. Todos os direitos reservados.</p>
-    <p class="text-center text-[12px]"> desenvolvido por @techinov</p>
-  </div>
+  <div class="bg-black w-full py-4 flex flex-col justify-center items-center text-gray-500 text-center px-4">
+    <p class="text-sm md:text-base">
+      &copy; {{ new Date().getFullYear() }} Caudas. Todos os direitos reservados.
+    </p>
+    <p class="text-xs md:text-sm">desenvolvido por @techinov</p>
+  </div>  
 </template>
 
 <style>
