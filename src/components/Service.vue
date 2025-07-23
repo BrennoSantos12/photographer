@@ -9,18 +9,21 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl text-white mt-8">
       <div class="bg-gray-500 rounded-xl p-4 sm:p-5 md:p-6 hover:scale-105 transition-transform text-base md:text-lg mx-auto w-full max-w-xs">
-        <h1 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Corporate Events</h1>
-        <p>Professional coverage for corporate gatherings, capturing key moments and attendees.</p>
+        <h1 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-center">Cobertura de eventos</h1>
+        <p>Faço registros de fotos e vídeos em eventos, captando momentos e emoções. Planejo e preparo tudo para contar a história do evento de forma única.
+        </p>
       </div>
 
       <div class="bg-gray-500 rounded-xl p-4 sm:p-5 md:p-6 hover:scale-105 transition-transform text-base md:text-lg mx-auto w-full max-w-xs">
-        <h1 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Private Parties</h1>
-        <p>Candid and posed shots to commemorate your special celebrations with friends and family.</p>
+        <h1 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-center">Ensaio das bandas</h1>
+        <p>Fotografo ensaios de bandas, registrando a energia, a expressão e a interação dos músicos. Busco capturar imagens autênticas que transmitam a identidade e o clima do som da banda.
+        </p>
       </div>
 
       <div class="bg-gray-500 rounded-xl p-4 sm:p-5 md:p-6 hover:scale-105 transition-transform text-base md:text-lg mx-auto w-full max-w-xs">
-        <h1 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Conferences</h1>
-        <p>Comprehensive photography services for conferences, including speakers, sessions, and networking events.</p>
+        <h1 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-center">Fotos para Álbuns e clipes</h1>
+        <p>Realizo ensaios fotográficos para álbuns e clipes de música, criando imagens que refletem a identidade visual e artística do projeto. Busco composições marcantes que transmitam a essência da música e do artista.
+          </p>
       </div>
     </div>
   </div>

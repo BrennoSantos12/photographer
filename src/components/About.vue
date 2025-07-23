@@ -7,13 +7,13 @@
       <h1
         class="font-gravitas text-white text-3xl sm:text-4xl md:text-5xl max-w-xl md:max-w-2xl text-center md:text-left"
       >
-        Meu trabalho é congelar o grito que ecoa para sempre na memória do palco.
+      Fotografar é a arte de revelar o olhar e a visão de mundo do fotógrafo.
       </h1>
 
       <img
-        src="../assets/icones/CaudasIdentidade.png"
+        src="../assets/icones/servico.jpg"
         alt="caudas identidade visual"
-        class="w-40 sm:w-48 md:w-60 mx-auto md:mx-0"
+        class="w-60 sm:w-48 md:w-60 mx-auto md:mx-0"
       />
     </div>
 
@@ -21,14 +21,11 @@
       <h2
         class="text-stone-400 text-base sm:text-lg md:text-xl max-w-3xl mx-auto md:mx-0 text-justify"
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod praesentium voluptatibus totam
-        ipsa numquam? Similique corporis dignissimos officiis maxime aliquam suscipit, iste eius,
-        minima quae, doloremque quisquam ullam reprehenderit! Natus? Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Illo, earum neque! Vitae deleniti inventore ipsam voluptatum
-        ea, suscipit pariatur debitis laboriosam, tenetur eveniet, ab explicabo corrupti quaerat
-        facere sequi sed. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit illum quos
-        et non perspiciatis, molestias voluptatem veniam maxime sit. Corporis deleniti sunt totam
-        officia blanditiis commodi facilis saepe. Excepturi, repellendus.
+      Meu nome é Caudas, tenho 22 anos, sou natural do Rio Grande do Sul e vivo a arte desde cedo. Há 4 anos atuo como fotógrafo especializado em shows e eventos, transformando momentos intensos e cheios de energia em registros que contam histórias.
+      <br>
+      Com um olhar sensível e técnico, busco capturar não apenas imagens, mas a atmosfera e a emoção de cada apresentação — dos grandes palcos aos encontros mais intimistas. Trabalho com comprometimento, agilidade e atenção aos detalhes, sempre focado em entregar resultados que representem a verdadeira essência do evento.
+      <br>
+      Meu objetivo é oferecer mais do que fotos: é entregar memórias vivas que conectam pessoas àquilo que viveram.
       </h2>
     </div>
 

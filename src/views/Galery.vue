@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref } from 'vue';
 
 // Importa todas as imagens automaticamente
 const imgFiles = import.meta.glob('../assets/img/*.{jpg,jpeg,png,webp}', { eager: true });
@@ -15,33 +15,6 @@ const allImages = Object.values(imgFiles).map((mod: any) => ({
 
 const selectedImage = ref<string | null>(null);
 
-// Controle de quantas imagens são visíveis
-const visibleCount = ref(6);
-const visibleImages = ref(allImages.slice(0, visibleCount.value));
-
-const loadMore = () => {
-  if (visibleCount.value < allImages.length) {
-    visibleCount.value += 6;
-    visibleImages.value = allImages.slice(0, visibleCount.value);
-  }
-};
-
-// Detecta scroll no fundo da página
-const handleScroll = () => {
-  const bottomOffset = 200; // px antes do fundo para carregar
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - bottomOffset) {
-    loadMore();
-  }
-};
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', handleScroll);
-});
-
 const openImage = (src: string) => {
   selectedImage.value = src;
 };
@@ -52,10 +25,10 @@ const closeImage = () => {
 </script>
 
 <template>
-  <main class="">
-    <div class="columns-2 md:columns-2 lg:columns-3 gap-4 w-full max-w-7xl">
+  <main>
+    <div class="columns-2 md:columns-2 lg:columns-4 gap-4 w-full p-4">
       <div
-        v-for="(img, i) in visibleImages"
+        v-for="(img, i) in allImages"
         :key="i"
         class="relative overflow-hidden group mb-4 break-inside-avoid cursor-pointer"
         @click="openImage(img.src)"
@@ -82,4 +55,3 @@ const closeImage = () => {
     </div>
   </main>
 </template>
-

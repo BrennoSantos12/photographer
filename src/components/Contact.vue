@@ -191,8 +191,9 @@ onBeforeUnmount(() => {
     </div>
   </main>
 
-  <div class="bg-black w-screen h-20 flex justify-center items-center text-gray-500">
-    <h1>desenvolvido por: @techinov</h1>
+  <div class="bg-black w-screen h-20 flex flex-col justify-center items-center text-gray-500">
+    <p>&copy; {{ new Date().getFullYear() }} Caudas. Todos os direitos reservados.</p>
+    <p class="text-center text-[12px]"> desenvolvido por @techinov</p>
   </div>
 </template>
 
