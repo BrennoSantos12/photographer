@@ -120,95 +120,112 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <main class="background text-white min-h-screen bg-black px-4">
-    <div class="flex flex-col">
-      <div class="fle itens-center justify-center text-center mb-8">
+  <main class="background text-white min-h-screen bg-black px-4 py-8">
+    <div class="container mx-auto">
+      <div class="flex items-center justify-center text-center mb-8 md:mb-12">
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-gravitas">Vamos conversar!</h1>
       </div>
 
-      <div class="flex md:flex-row justify-evenly gap-40 w-full ">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 lg:gap-24 w-full">
+        <form  
+          action="https://formspree.io/f/xqalpwgo"
+          method="POST"
+          class="flex flex-col w-full max-w-md gap-4 text-center"
+        >
+          <h1 class="text-2xl font-semibold">Entre em contato</h1>
 
-          <form  
-              action="https://formspree.io/f/xqalpwgo"
-            method="POST"
-          class="flex flex-col w-80 gap-4 text-center">
-            <h1 class="text-2xl font-semibold">Entre em contato</h1>
+          <div
+            class="tilt-wrapper"
+            :style="tiltStyles[1]"
+            @mousemove="e => handleMouseMove(e,1)"
+            @mouseleave="() => handleMouseLeave(1)"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Seu email"
+              class="tilt-elem bg-gray-200 text-black hover:text-white hover:bg-gray-900 p-2 rounded w-full focus:outline-none"
+              required
+            />
+          </div>
 
-            <div
-              class="tilt-wrapper"
-              :style="tiltStyles[1]"
-              @mousemove="e => handleMouseMove(e,1)"
-              @mouseleave="() => handleMouseLeave(1)"
-            >
-              <input
-                type="email"
-                placeholder="Seu email"
-                class="tilt-elem bg-gray-200 text-black hover:text-white hover:bg-gray-900 p-2 rounded w-full max-w-md focus:outline-none"
-              />
-            </div>
+          <div
+            class="tilt-wrapper"
+            :style="tiltStyles[2]"
+            @mousemove="e => handleMouseMove(e,2)"
+            @mouseleave="() => handleMouseLeave(2)"
+          >
+            <textarea
+              placeholder="Sua mensagem"
+              rows="5"
+              name="message"
+              class="tilt-elem bg-gray-200 text-black hover:text-white hover:bg-gray-900 p-2 rounded w-full resize-none focus:outline-none"
+              required
+            ></textarea>
+          </div>
 
-            <div
-              class="tilt-wrapper"
-              :style="tiltStyles[2]"
-              @mousemove="e => handleMouseMove(e,2)"
-              @mouseleave="() => handleMouseLeave(2)"
-            >
-              <textarea
-                placeholder="Sua mensagem"
-                rows="5"
-                name="message"
-                class="tilt-elem bg-gray-200 text-black hover:text-white hover:bg-gray-900 p-2 rounded w-full max-w-md resize-none focus:outline-none"
-              ></textarea>
-            </div>
-
-            <div
-              :style="tiltStyles[3]"
-              @mousemove="e => handleMouseMove(e,3)"
-              @mouseleave="() => handleMouseLeave(3)"
-              class="tilt-wrapper inline-block"
-            >
-              <button
+          <div
+            :style="tiltStyles[3]"
+            @mousemove="e => handleMouseMove(e,3)"
+            @mouseleave="() => handleMouseLeave(3)"
+            class="tilt-wrapper inline-block w-full"
+          >
+            <button
               type="submit"
-                class="tilt-elem bg-red-600 text-white p-2 font-medium hover:bg-gray-900 hover:text-red-600 active:scale-[0.98] transition-colors duration-150"
-              >
-                Enviar
-              </button>
+              class="tilt-elem bg-red-600 text-white p-2 font-medium hover:bg-gray-900 hover:text-red-600 active:scale-[0.98] transition-colors duration-150 w-full"
+            >
+              Enviar
+            </button>
+          </div>
+        </form>
+        <div class="flex flex-col justify-center gap-4 w-full max-w-md mt-8 md:mt-0 px-4 md:px-0">
+          <h1 class="font-gravitas text-center text-lg md:text-xl lg:text-2xl">
+            Se eu tirei uma foto sua, fique tranquilo: ela é sua!
+            Se quiser usar em projetos, é só me chamar por DM.
+            E se quiser uma edição personalizada, faço por apenas R$10!
+          </h1>
+          <div class="flex gap-4 justify-center  mt-12 md:mt-8">
+
+            <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
+              <a href="https://wa.me/5565999668973" target="_blank" rel="noopener noreferrer">
+                <img src="../assets/icones/whatsapp.jpg" alt="WhatsApp" class="w-full h-full object-cover rounded-full" />
+              </a>
             </div>
-          </form>
-          <div class="flex flex-col justify-center gap-2 w-full max-w-md mt-8 md:mt-0">
-            <h1 class="font-gravitas text-center">Se eu tirei uma foto sua, fique tranquilo: ela é sua!
-              Se quiser usar em projetos, é só me chamar por DM.
-              E se quiser uma edição personalizada, faço por apenas R$10!</h1>
+            <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
+              <a href="https://x.com/Sr_Caudas" target="_blank" rel="noopener noreferrer">
+                <img src="../assets/icones/x.webp" alt="Twitter" class="w-full h-full object-cover rounded-full" />
+              </a>
+            </div>
+            <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
+              <a href="https://www.instagram.com/_caudas_/" target="_blank" rel="noopener noreferrer">
+                <img src="../assets/icones/instagram.jpg" alt="Instagram" class="w-full h-full object-cover rounded-full" />
+              </a>
+            </div>
+            <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
+              <a href="https://pin.it/3m3MO4VQe" target="_blank" rel="noopener noreferrer">
+                <img src="../assets/icones/pinterest.jpg" alt="Pinterest" class="w-full h-full object-cover rounded-full" />
+              </a>
+            </div>
+            <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
+              <a href="https://www.tiktok.com/@c4udas?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">
+                <img src="../assets/icones/tiktok.jpg" alt="TikTok" class="w-full h-full object-cover rounded-full" />
+              </a>
+            </div>
           </div>
         </div>
-      
-      <div class="flex gap-4 justify-center md:justify-end mt-[10rem] md:mt-4">
-    
-        <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
-          <a 
-          href="https://wa.me/5565999668973" >  <img src="../assets/icones/whatsapp.jpg" alt="" class="w-full h-full object-cover rounded-full" /></a>
-          </div>
-          <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
-            <a href="https://x.com/Sr_Caudas">  <img src="../assets/icones/x.webp" alt="" class="w-full h-full object-cover rounded-full" /></a>
-            </div>
-        <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
-       <a href="https://www.instagram.com/_caudas_/">  <img src="../assets/icones/instagram.jpg" alt="" class="w-full h-full object-cover rounded-full" /> </a> 
-        </div>
-        <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
-      <a href="https://pin.it/3m3MO4VQe">   <img src="../assets/icones/pinterest.jpg" alt="" class="w-full h-full object-cover rounded-full" /></a> 
-        </div>   
-        <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
-          <a href="https://www.tiktok.com/@c4udas?is_from_webapp=1&sender_device=pc">  <img src="../assets/icones/tiktok.jpg" alt="" class="w-full h-full object-cover rounded-full" /></a>
-          </div>
+        
       </div>
+      
+      
     </div>
   </main>
+  
   <div class="bg-black w-full py-4 flex flex-col justify-center items-center text-gray-500 text-center px-4">
     <p class="text-sm md:text-base">
       &copy; {{ new Date().getFullYear() }} Caudas. Todos os direitos reservados.
     </p>
     <p class="text-xs md:text-sm">desenvolvido por @techinov</p>
-  </div>  
+  </div>
 </template>
 
 <style>
@@ -218,12 +235,11 @@ onBeforeUnmount(() => {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  min-height: 88vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 2rem;
 }
 
 .tilt-wrapper {
@@ -234,6 +250,7 @@ onBeforeUnmount(() => {
   --ly: 50%;
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 .tilt-elem {
@@ -282,4 +299,10 @@ onBeforeUnmount(() => {
   outline-offset: 2px;
 }
 
+@media (max-width: 768px) {
+  .background {
+    padding: 2rem 1rem;
+    background-attachment: scroll;
+  }
+}
 </style>

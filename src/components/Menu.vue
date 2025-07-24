@@ -294,7 +294,6 @@ onMounted(() => {
 
       <ul class="text-6xl space-y-6 font-gravitas text-center z-10">
         <li><router-link to="/">Home</router-link></li>
-        <!-- <li><a href="#" @click="isOpen = false">Sobre mim</a></li> -->
         <li><router-link to="/galeria">Galeria</router-link></li>
       </ul>
     </div>
