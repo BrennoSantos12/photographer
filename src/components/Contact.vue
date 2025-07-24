@@ -126,13 +126,13 @@ onBeforeUnmount(() => {
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-gravitas">Vamos conversar!</h1>
       </div>
 
-      <div class="flex ">
-        <div class="flex justify-between w-full">
+      <div class="flex md:flex-row justify-evenly gap-40 w-full ">
+
           <form  
               action="https://formspree.io/f/xqalpwgo"
             method="POST"
           class="flex flex-col w-80 gap-4 text-center">
-            <h1 class="text-2xl font-semibold">Entre em contato!</h1>
+            <h1 class="text-2xl font-semibold">Entre em contato</h1>
 
             <div
               class="tilt-wrapper"
@@ -175,12 +175,15 @@ onBeforeUnmount(() => {
               </button>
             </div>
           </form>
-        
+          <div class="flex flex-col justify-center gap-2 w-full max-w-md mt-8 md:mt-0">
+            <h1 class="font-gravitas text-center">Se eu tirei uma foto sua, fique tranquilo: ela é sua!
+              Se quiser usar em projetos, é só me chamar por DM.
+              E se quiser uma edição personalizada, faço por apenas R$10!</h1>
+          </div>
         </div>
       
-      </div>
       <div class="flex gap-4 justify-center md:justify-end mt-[10rem] md:mt-4">
-
+    
         <div class="rounded-full h-10 w-10 overflow-hidden hover:scale-[1.2] transition-transform duration-150">
           <a 
           href="https://wa.me/5565999668973" >  <img src="../assets/icones/whatsapp.jpg" alt="" class="w-full h-full object-cover rounded-full" /></a>

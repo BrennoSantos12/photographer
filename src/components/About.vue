@@ -11,7 +11,7 @@
       </h1>
 
       <img
-        src="../assets/icones/servico.jpg"
+        src="../assets/icones/CaudasIdentidade.png"
         alt="caudas identidade visual"
         class="w-60 sm:w-48 md:w-60 mx-auto md:mx-0"
       />
