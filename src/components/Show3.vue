@@ -25,6 +25,7 @@ const images = [
   { src: img8, label: 'PERTENCIMENTO', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
 ];
 
+
 const openImage = (src: string) => {
   selectedImage.value = src;
 };
