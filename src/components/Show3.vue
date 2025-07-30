@@ -15,13 +15,13 @@ const selectedImage = ref<string | null>(null);
 const randomHeights = ['h-[250px]', 'h-[600px]', 'h-[350px]', 'h-[450px]', 'h-[200px]'];
 
 const images = [
-  { src: img1, label: 'RODA PUNK', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
+  { src: img1, label: 'MUSH', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
   { src: img2, label: 'GRITARIA', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
   { src: img3, label: 'EMOÇÃO', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
-  { src: img4, label: 'FELICIDADE', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
+  { src: img4, label: 'RESISTÊNCIA', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
   { src: img5, label: 'MÚSICA', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
-  { src: img6, label: 'ROCK', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
-  { src: img7, label: 'BATIDAS', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
+  { src: img6, label: 'ARTE', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
+  { src: img7, label: 'REVOLUÇÃO', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
   { src: img8, label: 'PERTENCIMENTO', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
 ];
 
