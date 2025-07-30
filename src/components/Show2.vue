@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 
 import img1 from '../assets/img/IMG_2047.jpg';
-import img2 from '../assets/img/IMG_2308.jpg';
+import img2 from '../assets/img/IMG_2070.jpg';
 import img3 from '../assets/img/IMG_2074.jpg';
 import img4 from '../assets/img/IMG_0900.jpg';
 import img5 from '../assets/img/IMG_0947.jpg';
