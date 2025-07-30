@@ -4,6 +4,7 @@ import Home from '../components/Home.vue';
 import About from '../components/About.vue';
 import Show from '../components/Show.vue';
 import Show2 from '../components/Show2.vue';
+import Show3 from '../components/Show3.vue';
 import Service from '../components/Service.vue';
 import Contact from '../components/Contact.vue';
 
@@ -23,6 +24,7 @@ onMounted(() => {
     <div ref="homeRef">
       <Home />
     </div>
+    <Show3 />
     <About />
     <Show />
     <Service />

@@ -51,7 +51,7 @@ const closeImage = () => {
         >
         <div class="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-90 flex items-center justify-center
                     translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-out ">
-          <span class="text-red-800 text-2xl font-bold">{{ img.label }}</span>
+          <span class="text-red-800 text-2xl font-bold font-gravitas text-center p-2">{{ img.label }}</span>
         </div>
       </div>
     </div>

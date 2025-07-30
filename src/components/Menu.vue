@@ -293,9 +293,20 @@ onMounted(() => {
       </div>
 
       <ul class="text-6xl space-y-6 font-gravitas text-center z-10">
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/galeria">Galeria</router-link></li>
+        <li>
+          <router-link
+            to="/"
+            :class="{ 'text-yellow-300': route.path === '/' }"
+          >Home</router-link>
+        </li>
+        <li>
+          <router-link
+            to="/galeria"
+            :class="{ 'text-yellow-300': route.path === '/galeria' }"
+          >Galeria</router-link>
+        </li>
       </ul>
+      
     </div>
   </transition>
 </template>

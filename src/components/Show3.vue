@@ -1,28 +1,28 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import img1 from '../assets/img/20250322_213951.jpg';
-import img2 from '../assets/img/20250322_213620(0).jpg';
-import img3 from '../assets/img/20250322_213317.jpg';
-import img4 from '../assets/img/20250322_213445(0).jpg';
-import img5 from '../assets/img/20250322_214549.jpg';
-import img6 from '../assets/img/IMG_1005.jpg';
+import img1 from '../assets/img/IMG_2011.jpg';
+import img2 from '../assets/img/IMG_1005.jpg';
+import img3 from '../assets/img/IMG_0927.jpg';
+import img4 from '../assets/img/DSC03007.jpg';
+import img5 from '../assets/img/DSC02999.jpg';
+import img6 from '../assets/img/IMG_1089.jpg';
 import img7 from '../assets/img/20250322_214701.jpg';
-import img8 from '../assets/img/20250322_230015(0).jpg';
+import img8 from '../assets/img/20250322_214655.jpg';
 
 const selectedImage = ref<string | null>(null);
 
-const randomHeights = ['h-[250px]', 'h-[300px]', 'h-[350px]', 'h-[400px]', 'h-[450px]'];
+const randomHeights = ['h-[250px]', 'h-[600px]', 'h-[350px]', 'h-[450px]', 'h-[200px]'];
 
 const images = [
-  { src: img1, label: 'SESTRO', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
-  { src: img2, label: 'HATE', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
-  { src: img3, label: 'SESTRO', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
-  { src: img4, label: 'HATE', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
-  { src: img5, label: 'SESTRO', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
-  { src: img6, label: 'HATE', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
-  { src: img7, label: 'SESTRO', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
-  { src: img8, label: 'HATE', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
+  { src: img1, label: 'RODA PUNK', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
+  { src: img2, label: 'GRITARIA', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
+  { src: img3, label: 'EMOÇÃO', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
+  { src: img4, label: 'FELICIDADE', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
+  { src: img5, label: 'MÚSICA', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
+  { src: img6, label: 'ROCK', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
+  { src: img7, label: 'BATIDAS', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
+  { src: img8, label: 'PERTENCIMENTO', height: randomHeights[Math.floor(Math.random() * randomHeights.length)] },
 ];
 
 const openImage = (src: string) => {
@@ -72,13 +72,13 @@ const closeImage = () => {
 
 <style scoped>
 .background {
-  background-image: url('../assets/gifs/animated_red_letters.gif');
-  background-size: cover;
+  background-image: url('../assets/img/IMG_2567.jpg');
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
